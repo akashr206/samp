@@ -1,0 +1,36 @@
+body{
+    padding-left: 22%;
+}
+.side-bar-div{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+    border-right: 0.1px rgb(178, 178, 178) solid;
+}
+
+.home-div{
+    border-radius: 3px;
+    text-decoration: none;
+    
+}
+
+.cat-logo-div{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    height: 63px;
+    padding: 10%;
+    border-bottom: 0.5px rgb(207, 207, 207) solid;
+    
+}
+.cat-logo{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}

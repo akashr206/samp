@@ -2,12 +2,10 @@
 .products-div{ 
     display: grid;
     grid-template-columns: repeat(2,auto);
-    width: 80%;
     place-items: center;
-    row-gap: 10px;
-    width: 100%;
+    row-gap: 15px;
+    margin: 0 5px 20px 85px;
 }
-
 .product{
     display: flex;
     flex-direction: column;
@@ -68,4 +66,10 @@
     background-color: rgb(244, 231, 50);
     border-radius: 4px;
     color: black;
+}
+.add-cart:active{
+    opacity: 0.7;
+}
+.home{
+    color:  rgba(255, 0, 85, 0.996);
 }

@@ -6,7 +6,7 @@
     bottom: 0px;
     width: 100%;
     height: 55px;
-    background-color: rgb(68, 68, 68);
+    background-color: rgb(255, 255, 255);
     align-items: center;
     border-top: 0.5px rgb(215, 215, 215) solid;
     box-shadow: inset 0.1px 0.1px 5px rgba(0,0,0,0.1);
@@ -21,8 +21,6 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    border-right: 0.5px rgb(196, 195, 195) solid;
-    
 }
 .home,
 .cart,
@@ -32,9 +30,7 @@
     font-weight: 600;
     
 }
-.home{
-    color: #ffee17;
-}
+
 .icons{
     width: 20%;
 }

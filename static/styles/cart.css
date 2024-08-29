@@ -1,12 +1,8 @@
 .cart-div{
-    background-color: #575757;
-    color: rgb(243, 243, 243);
+    color: rgb(243, 0, 86);
     border-radius: 3px;
     text-decoration: none;
 
-}
-#cart-logo{
-    filter: invert(1);
 }
 
 .item-div{
@@ -48,4 +44,21 @@ button{
     font-size: 90%;
     border: 0.2px rgb(77, 77, 77) solid;
     border-radius: 5px;
+}
+.remove{
+    font-weight: bold;
+    font-size: 11px;
+    border: 1px red solid;
+    border-radius: 0px;
+    color: red;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-right: 10px;
+    height: 30px;
+}
+.remove-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

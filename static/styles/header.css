@@ -23,7 +23,7 @@ a{
     height: 70px;
     
     align-items: center;
-    background-color: rgb(240, 240, 25);
+    background-color: rgb(251, 32, 105);
     color: rgb(72, 72, 72);
     border-bottom: 0.5px rgb(186, 185, 185) solid;
     flex-shrink: 0;
@@ -38,7 +38,7 @@ a{
     font-family: "Ubuntu";
     margin: 0;
     font-size: 100%;
-    font-weight: 600;
+    font-weight: bolder;
 }
 .search-bar{
     display: flex;

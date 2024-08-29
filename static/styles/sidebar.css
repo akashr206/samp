@@ -1,6 +1,4 @@
-body{
-    padding-left: 22%;
-}
+
 .side-bar-div{
     display: flex;
     flex-direction: column;
@@ -16,7 +14,6 @@ body{
 .home-div{
     border-radius: 3px;
     text-decoration: none;
-    
 }
 
 .cat-logo-div{
@@ -26,7 +23,7 @@ body{
     justify-content: center;
     height: 63px;
     padding: 10%;
-    border-bottom: 0.5px rgb(207, 207, 207) solid;
+    border-radius: 2px;
     
 }
 .cat-logo{

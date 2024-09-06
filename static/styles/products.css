@@ -1,4 +1,8 @@
 
+
+
+
+
 .products-div{ 
     display: grid;
     grid-template-columns: repeat(2,auto);
@@ -13,6 +17,7 @@
     width: 135px;
     border: 1px rgb(151, 151, 151) solid;
     border-radius: 2px;
+    transition: 0.5s all; 
 }
 .pro-img-div{
     display: flex;
@@ -68,8 +73,19 @@
     color: black;
 }
 .add-cart:active{
-    opacity: 0.7;
+    opacity: 0;
 }
 .home{
     color:  rgba(255, 0, 85, 0.996);
+}
+
+@media screen and (max-width:375px) {
+    .product{
+        height: 215px;
+        width: 120px;
+        transition: 0.5s all; 
+    }
+    .products-div{
+        margin-top: 10px;
+    }
 }

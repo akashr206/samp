@@ -1,22 +1,20 @@
 .cart-div{
-    color: rgb(243, 0, 86);
+    color: #f30056;
     border-radius: 3px;
     text-decoration: none;
-
 }
 
 .item-div{
     display: flex;
-    flex-direction: column;
-    
-    
+    flex-direction: column; 
+    margin-top: 80px;
 }
+
 .cart-item{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px gray solid;
     padding: 12px 0 12px 10px;
-    
 }
 .item-img{
     width: 82px;

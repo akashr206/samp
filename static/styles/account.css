@@ -1,10 +1,3 @@
-.account-div{
-    background-color: #575757;
-    color: rgb(243, 243, 243);
-    border-radius: 3px;
-    text-decoration: none;
-
-}
-#account-logo{
-    filter: invert(1);
+.account-div p{
+    color: #f30056;
 }

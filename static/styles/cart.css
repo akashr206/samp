@@ -40,6 +40,9 @@ p{
     font-size: 100%;
     padding-left: 5px;
     border: 0.5px rgb(179, 178, 178) solid;
+    border-bottom: none;
+    border-top: none;
+    outline: none;
 }
 button{
     background-color: white;
@@ -76,5 +79,5 @@ button{
 .plus{
     width: 22px;
     border: none;
-
+ 
 }

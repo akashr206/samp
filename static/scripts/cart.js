@@ -35,6 +35,16 @@ function addCart(id, btn) {
     }
 }
 
+function updateCart(value,id){
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    cart.forEach(ele => {
+        if(ele.id == id){
+            ele.quantity = value
+        }
+    });
+    localStorage.setItem("cart", JSON.stringify(cart))
+}
+
 function displayCart() {
     let cart = JSON.parse(localStorage.getItem("cart"))
     if(!cart.length){
@@ -54,7 +64,7 @@ function displayCart() {
                                 <p class="item-price">Rs. ${item.price}</p>
                                 <div class="iq-div">
                                     <button class="minus" onclick="minus(this,${item.id})">-</button>
-                                    <input type="number" class="item-quantity" value="${Number(cartele.quantity)}" oninput="bin(this)">
+                                    <input type="number" class="item-quantity" value="${Number(cartele.quantity)}" oninput="bin(this)" onchange="updateCart(this.value,${item.id})">
                                     <button class="plus" onclick="plus(this,${item.id})">+</button>
                                 </div>
                             </div><div class ="remove-div">
@@ -69,29 +79,17 @@ function displayCart() {
 }
 
 function plus(p, id) {
-    let cart = JSON.parse(localStorage.getItem("cart"))
     let x = Number(p.previousElementSibling.value)
     x += 1
     p.previousElementSibling.value = x
-    cart.forEach(e => {
-        if (e.id == id) {
-            e.quantity = x
-        }
-    })
-    localStorage.setItem("cart", JSON.stringify(cart))
+    updateCart(x,id)
     bin(p.previousElementSibling)
 }
 function minus(m, id) {
-    let cart = JSON.parse(localStorage.getItem("cart"))
     let x = Number(m.nextElementSibling.value)
     x -= 1
     m.nextElementSibling.value = x
-    cart.forEach(e => {
-        if (e.id == id) {
-            e.quantity = x
-        }
-    })
-    localStorage.setItem("cart", JSON.stringify(cart))
+    updateCart(x,id)
     if (x == 0) {
         removeite(id)
     }
@@ -142,5 +140,13 @@ function cCheck() {
     cont.innerHTML = h
 }
 
+function cempty(){
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    cart.forEach(e => {
+        if(!e.quantity){
+            removeite(e.id)
+        }        
+    });
+}
 
-window.onload = displayCart()
+window.onload = displayCart() ; cempty()

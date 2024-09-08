@@ -33,7 +33,14 @@ function addCart(id, btn) {
         }
         localStorage.setItem("cart", JSON.stringify(cart))
     }
+    btn.addEventListener("click",cartlen())
 }
+function pressEnter(e,value,id){
+    if(e.key==="Enter"){
+        updateCart(value,id)
+    }
+}
+
 
 function updateCart(value,id){
     let cart = JSON.parse(localStorage.getItem("cart"))
@@ -43,10 +50,12 @@ function updateCart(value,id){
         }
     });
     localStorage.setItem("cart", JSON.stringify(cart))
+    location.reload()
 }
 
 function displayCart() {
-    let cart = JSON.parse(localStorage.getItem("cart"))
+    let cart = JSON.parse(localStorage.getItem("cart")) || ""
+
     if(!cart.length){
         cCheck()
         return
@@ -58,15 +67,16 @@ function displayCart() {
                             <div class="img-div">
                                 <img src="../product-img/${item.img}" class="item-img">
                             </div>
-                            <div class="details-div">
+                            <div class="details-div" id="${item.id}">
                                 <p class="item-name">${item.pName}</p>
                                 <p class="item-price">${item.size}</p>
                                 <p class="item-price">Rs. ${item.price}</p>
                                 <div class="iq-div">
                                     <button class="minus" onclick="minus(this,${item.id})">-</button>
-                                    <input type="number" class="item-quantity" value="${Number(cartele.quantity)}" oninput="bin(this)" onchange="updateCart(this.value,${item.id})">
+                                    <input type="number" class="item-quantity" value="${Number(cartele.quantity)}" oninput="bin(this)" onchange="updateCart(this.value,${item.id})" onkeydown="pressEnter(event,this,${item.id})">
                                     <button class="plus" onclick="plus(this,${item.id})">+</button>
                                 </div>
+                                <p class="amount" >Amount : &#x20B9 ${Number(item.price)*Number(cartele.quantity)}.00</p>
                             </div><div class ="remove-div">
                             <button class="remove" onclick="removeite(${item.id})">REMOVE</button><div>
                         </div>`
@@ -143,10 +153,29 @@ function cCheck() {
 function cempty(){
     let cart = JSON.parse(localStorage.getItem("cart"))
     cart.forEach(e => {
-        if(!e.quantity){
+        if(e.quantity == 0){
             removeite(e.id)
-        }        
+        }
     });
 }
+function qcheck(){
+    let iq = document.getElementsByClassName("item-quantity")
+    for (let i = 0; i < iq.length; i++) {
+        bin(iq[i])
+    }
+}
+function cartlen(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || ""
+    let len = document.querySelector(".cartlen")
+    if(cart.length){
+        len.textContent = cart.length
+    } else{
+        document.remove(len)
+    }
+}
 
-window.onload = displayCart() ; cempty()
+if(window.location.pathname.includes("cart.html")){
+    window.onload = displayCart() ; cempty(); qcheck();
+} else{
+    window.onload =  cartlen();
+}

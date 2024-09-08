@@ -14,11 +14,11 @@
 
 .spinner {
     border:6px solid rgb(246, 246, 246);
-    border-top: 6px solid #ff1111;
+    border-top: 6px solid #5ebec4;
     border-radius: 100px;
     width: 40px;
     height: 40px;
-    animation: spin 1s ease-in-out infinite;
+    animation: spin 0.7s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -26,3 +26,4 @@
         transform: rotate(360deg);
     }
 }
+

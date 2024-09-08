@@ -20,7 +20,7 @@ dProducts.forEach(product => {
                             <p class="pro-price">${product.size}</p>
                         </div>
                         <div class="pro-quantity-div">
-                            <input class="quantity" type="number" placeholder="Quantity">
+                            <input class="quantity" min="1" type="number" placeholder="Quantity">
                         </div>
                         <div class="add-cart-div">
                             <button class="add-cart" onclick="addCart(${product.id},this)">Add to Cart</button>
@@ -49,7 +49,7 @@ function search(){
                             <p class="pro-price">${product.size}</p>
                         </div>
                         <div class="pro-quantity-div">
-                            <input class="quantity" type="number" placeholder="Quantity">
+                            <input class="quantity" min="1" type="number" placeholder="Quantity">
                         </div>
                         <div class="add-cart-div">
                             <button class="add-cart" onclick="addCart(${product.id},this)">Add to Cart</button>

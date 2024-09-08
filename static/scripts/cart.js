@@ -22,7 +22,7 @@ let newProducts = [
 function addCart(id, btn) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     quant = btn.parentElement.previousElementSibling.firstElementChild.value
-    if (quant == 0) {
+    if (quant <= 0) {
         alert("Quantity Cannot be empty")
     } else {
         existing = cart.find(ite => ite.id === id)
@@ -168,9 +168,10 @@ function cartlen(){
     let cart = JSON.parse(localStorage.getItem("cart")) || ""
     let len = document.querySelector(".cartlen")
     if(cart.length){
+        len.toggleAttribute("style","")
         len.textContent = cart.length
     } else{
-        document.remove(len)
+        len.setAttribute("style","display: none;")
     }
 }
 

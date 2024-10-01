@@ -1,3 +1,17 @@
+
+body{
+    font-family: "ubuntu";
+}
+
 .account-div p{
     color: #5ebec4;
+}
+
+.underDEv{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

@@ -177,8 +177,27 @@ function cartlen(){
     }
 }
 
+function orderSummary(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || ""
+    let tItem = document.querySelector(".total h5 span")
+    let tPrice = document.querySelector(".total h4 span")
+    let tSum = 0
+    tPrice.innerHTML = "hi"
+    tItem.innerHTML = cart.length
+    for (const ele of cart) {
+        for (const i of newProducts) {
+            if (ele.id == i.id){
+                tSum += Number(ele.quantity) * Number(i.price)
+            }
+        }
+    }
+    tPrice.innerHTML = tSum
+    
+}
+
+
 if(window.location.pathname.includes("cart.html")){
-    window.onload = displayCart() ; cempty(); qcheck();
+    window.onload = displayCart() ; cempty(); qcheck(); orderSummary();
 } else{
     window.onload =  cartlen();
 }

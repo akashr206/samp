@@ -76,7 +76,7 @@ function displayCart() {
                                     <input type="number" class="item-quantity" value="${Number(cartele.quantity)}" oninput="bin(this)" onchange="updateCart(this.value,${item.id})" onkeydown="pressEnter(event,this,${item.id})">
                                     <button class="plus" onclick="plus(this,${item.id})">+</button>
                                 </div>
-                                <p class="amount" >Amount : &#x20B9 ${Number(item.price)*Number(cartele.quantity)}.00</p>
+                                <p class="amount" >Amount :<br/> &#x20B9 ${Number(item.price)*Number(cartele.quantity)}.00</p>
                             </div><div class ="remove-div">
                             <button class="remove" onclick="removeite(${item.id})">REMOVE</button><div>
                         </div>`
@@ -148,6 +148,8 @@ function cCheck() {
             </div>`
     let cont = document.querySelector(".item-div")
     cont.innerHTML = h
+    let tot = document.querySelector(".total")
+    tot.setAttribute("style","display: none")
 }
 
 function cempty(){

@@ -83,7 +83,16 @@ button{
 
 .amount{
     font-weight: bold;
-    width: 70px;    
+    width: 100px;    
+}
 
+.total{
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.total h4{
+    margin: 0;
+    margin-left: 10px;
 
 }
